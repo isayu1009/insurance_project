@@ -10,8 +10,11 @@ Explore correlations between plan type, risk level, and claims behavior
 Build visual dashboards with Power BI for clear decision-making
 Provide strategic recommendations for premium alignment and plan optimization
 
-<br><h2>🗂️Data Source</br></h2>
-Healthcare Claims – “Where Is the Money Going?” from Analyst Builder.
+<br>
+
+<h2>🗂️ Data Source</h2>
+
+The data is sourced from the project: [Healthcare Claims – Where Is the Money Going?](https://www.analystbuilder.com/projects/healthcare-claims-where-is-the-money-going-TVHLQ)
 
 <br><h2>🛠️Methodology</br></h2>
 <h3>1. Python (Data Preparation & Analysis)</h3>
