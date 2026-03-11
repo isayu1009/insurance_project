@@ -78,7 +78,7 @@ These steps ensured that the data used for prediction was clean, consistent, and
 Multiple models were tested to determine the best approach for predicting missing values and understanding member risk patterns:
 
 - **Random Forest Regressor / Classifier**  
-  Used for both missing date prediction due to its robustness and ability to capture nonlinear relationships.
+  Used for missing date prediction due to its robustness and ability to capture nonlinear relationships.
 
 - **Pipeline**  
   Implemented to streamline preprocessing and modeling steps, ensuring reproducibility and cleaner experimentation.
