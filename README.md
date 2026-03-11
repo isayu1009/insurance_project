@@ -55,3 +55,31 @@ The top 10 highest-risk members show clear trends:
 Evaluate premium structures for high‑risk members in low-cost plans.
 Encourage migration toward moderate‑tier plans for better cost alignment.
 Consider introducing an additional mid‑tier plan and phasing out the lowest-cost tier.
+<br>
+<br>
+<h2> Bonus </h2>
+
+<h2>🤖 Machine Learning Approach</h2>
+
+During the EDA stage, I identified that it was possible to **predict missing `enrollment_end_date` values**, as the dataset contained enough patterns and supporting variables to model this attribute.
+
+### 🔧 1. Data Preparation for Modeling
+
+Before modeling, the dataset underwent several preprocessing steps:
+
+- The dataset was already relatively clean; only minor corrections were required, such as **data type adjustments** and **merging two related tables**.
+- **Encoding categorical features** to make them usable for machine learning algorithms.
+- **Splitting the dataset** into training and testing sets to evaluate model performance.
+
+These steps ensured that the data used for prediction was clean, consistent, and suitable for machine learning.
+
+### 📈 2. Models Used
+
+Multiple models were tested to determine the best approach for predicting missing values and understanding member risk patterns:
+
+- **Random Forest Regressor / Classifier**  
+  Used for both missing date prediction and risk classification due to its robustness and ability to capture nonlinear relationships.
+
+- **Pipeline**  
+  Implemented to streamline preprocessing and modeling steps, ensuring reproducibility and cleaner experimentation.
+
