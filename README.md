@@ -151,7 +151,6 @@ The goal was to predict missing end dates using:
 - Claim history  
 - Member age  
 - Plan type  
-- Gaps and patterns in claims  
 - Health service categories  
 
 ### 📊 2. Model Performance
