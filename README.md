@@ -23,7 +23,63 @@ Data cleaning and preprocessing
 Missing data prediction using machine learning
 Feature extraction to identify high-cost and high-risk patterns
 
-<h3>2. Power BI (Visualization & Insights)</h3>
+<br>
+
+<h2>🧹 Data Cleaning & Preprocessing</h2>
+
+A significant part of this project involved transforming raw healthcare claim data into a reliable and analysis‑ready dataset. The cleaning process focused on accuracy, consistency, and preparing the data for machine learning.
+
+### 🔍 1. Data Quality Assessment
+Before cleaning, the dataset was examined for:
+- Missing or incomplete values  
+- Inconsistent data types (dates stored as text, numerical fields as strings)  
+- Duplicate records  
+- Unexpected categories or spelling variations  
+- Outliers in age, claim amounts, and enrollment gaps  
+
+This initial audit ensured that issues were identified early and addressed systematically.
+
+### 🔧 2. Data Type Corrections
+Several columns required type adjustments:
+- Converted **date fields** (`claim_date`, `enrollment_start`, `enrollment_end`) to proper datetime formats  
+- Fixed numerical fields that were incorrectly imported as strings  
+- Standardized categorical fields (plan types, gender, claim type)
+
+These transformations ensured that the dataset behaved correctly during EDA and modeling.
+
+### 🔗 3. Dataset Merging
+Two separate tables — member information and claim details — were merged using `member_id`.  
+This enabled:
+- Linking demographic information to claim behavior  
+- Creating derived features such as claim frequency per member  
+- Improving the machine learning model’s ability to detect patterns
+
+### 🧩 4. Missing Value Treatment
+During EDA, I identified that **missing `enrollment_end_date` values** showed meaningful patterns.  
+Instead of dropping these rows, I:
+- Analyzed correlations with `enrollment_start`, `claim_date`, plan type, and age  
+- Built a machine learning model to predict missing end dates  
+- Ensured the predicted values aligned with logical enrollment timelines
+
+### 🧼 5. Feature Engineering
+To enhance model performance and insights:
+- Calculated **claim frequency** and **claim cost ratios**  
+- Created **enrollment gap** duration  
+- Classified members into risk categories  
+- Extracted time‑based features such as year and month from claim dates
+
+These engineered features helped uncover cost drivers and risk patterns.
+
+### 🛡 6. Final Output
+After cleaning and preprocessing:
+- The dataset was consistent, well‑structured, and model‑ready  
+- No critical missing values remained  
+- All features used for analysis and machine learning were validated  
+- The dataset was exported into the `data/processed/` directory
+
+<br>
+
+<h3>Power BI (Visualization & Insights)</h3>
 
 Cost distribution
 Claim frequencies
@@ -83,3 +139,44 @@ Multiple models were tested to determine the best approach for predicting missin
 - **Pipeline**  
   Implemented to streamline preprocessing and modeling steps, ensuring reproducibility and cleaner experimentation.
 
+<br>
+
+<h2>🎯 Machine Learning Results</h2>
+
+The machine learning stage of the project focused on predicting missing `enrollment_end_date` values and identifying patterns associated with member risk and claim behavior.
+
+### 📘 1. Target Variable: Enrollment End Date
+The goal was to predict missing end dates using:
+- Enrollment start date  
+- Claim history  
+- Member age  
+- Plan type  
+- Gaps and patterns in claims  
+- Health service categories  
+
+### 📊 2. Model Performance
+The Random Forest model produced strong results due to its ability to:
+- Handle nonlinear relationships  
+- Capture interactions across demographic and claim variables  
+- Manage categorical and numerical features together  
+
+After evaluating several alternatives, Random Forest provided:
+- Good predictive stability  
+- Lower error on unseen data  
+- Clear feature importance output  
+
+### 🔍 3. Feature Importance Insights
+Key predictors that influenced the end date model included:
+<img width="900" height="500" alt="image" src="https://github.com/user-attachments/assets/19c414b6-3682-4ee2-9b52-435035ac0a42" />
+
+
+
+
+### 💡 4. Final ML Output
+The machine learning model enabled:
+- Filling in missing enrollment data with confidence  
+- Improving dataset completeness for BI reporting  
+- Supporting accurate risk segmentation  
+- Enhancing the quality of the visual analysis in Power BI  
+
+All predicted values were re‑integrated into the `processed` dataset for full analytical consistency.
