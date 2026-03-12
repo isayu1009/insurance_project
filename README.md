@@ -163,9 +163,9 @@ The Random Forest model produced strong results due to its ability to:
 After evaluating several alternatives, Random Forest provided:
 <br>
 <img width="202" height="93" alt="image" src="https://github.com/user-attachments/assets/be9f01e8-4b49-48d2-8366-46ff913bbd63" />
-- Indicates: Very accurate in general; however, occationally markes large error
+- Indicates: Very accurate in general; however, occationally markes large error </br>
 <br>Possible improvement:</br>
-  <br>*Inspect residuals (error distribution).</br>
+  *Inspect residuals (error distribution).</br>
   *Identify data points causing the large RMSE spikes.</br>
   *Consider robust models or transformations if outliers are legitimate.
 
@@ -182,5 +182,3 @@ The machine learning model enabled:
 - Improving dataset completeness for BI reporting  
 - Supporting accurate risk segmentation  
 - Enhancing the quality of the visual analysis in Power BI  
-
-All predicted values were re‑integrated into the `processed` dataset for full analytical consistency.
