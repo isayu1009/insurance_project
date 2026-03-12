@@ -143,7 +143,7 @@ Multiple models were tested to determine the best approach for predicting missin
 
 <h2>🎯 Machine Learning Results</h2>
 
-The machine learning stage of the project focused on predicting missing `enrollment_end_date` values and identifying patterns associated with member risk and claim behavior.
+The machine learning stage of the project focused on predicting missing `enrollment_end_date` values.
 
 ### 📘 1. Target Variable: Enrollment End Date
 The goal was to predict missing end dates using:
@@ -161,9 +161,13 @@ The Random Forest model produced strong results due to its ability to:
 - Manage categorical and numerical features together  
 
 After evaluating several alternatives, Random Forest provided:
-- Good predictive stability  
-- Lower error on unseen data  
-- Clear feature importance output  
+<br>
+<img width="202" height="93" alt="image" src="https://github.com/user-attachments/assets/be9f01e8-4b49-48d2-8366-46ff913bbd63" />
+- Indicates: Very accurate in general; however, occationally markes large error
+<br>Possible improvement:</br>
+  <br>*Inspect residuals (error distribution).</br>
+  *Identify data points causing the large RMSE spikes.</br>
+  *Consider robust models or transformations if outliers are legitimate.
 
 ### 🔍 3. Feature Importance Insights
 Key predictors that influenced the end date model included:
